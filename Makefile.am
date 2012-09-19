@@ -7,7 +7,8 @@ SUBDIRS = \
 	libcerror \
 	libcsplit \
 	po \
-	manuals
+	manuals \
+	tests
 
 DPKG_FILES = \
 	dpkg/changelog \

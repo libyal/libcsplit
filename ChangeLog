@@ -2,6 +2,9 @@ TODO
 * complete stand alone version
 * add tests
 
+20120919
+* updated dependencies
+
 20120701
 * Initial version split of from libcpath
 * Worked on stand-alone version

@@ -2,7 +2,7 @@ AC_PREREQ( 2.59 )
 
 AC_INIT(
  [libcsplit],
- [20120904],
+ [20120919],
  [joachim.metz@gmail.com])
 
 AC_CONFIG_SRCDIR(
@@ -63,22 +63,6 @@ AX_LIBCERROR_CHECK_ENABLE
 dnl Set additional compiler flags
 CFLAGS="$CFLAGS -Wall";
 
-dnl Set memwatch support
-ac_cv_enable_memwatch=no
-
-AS_IF(
- [test "x$ac_cv_enable_memwatch" != xno ],
- [AC_SUBST(
-  [MEMWATCH_CPPFLAGS],
-  ["-DMEMWATCH -DMEMWATCH_STDIO"])
- AC_SUBST(
-  [MEMWATCH_LIBADD],
-  [../common/libmemwatch.la]) ])
-
-AM_CONDITIONAL(
- [HAVE_MEMWATCH],
- [test "x$ac_cv_enable_memwatch" != xno])
-
 dnl Check if requires and build requires should be set in spec file
 AS_IF(
  [test "x$ac_cv_libcstring" = xyes || test "x$ac_cv_libcerror" = xyes],
@@ -105,6 +89,7 @@ AC_CONFIG_FILES([libcsplit/Makefile])
 AC_CONFIG_FILES([po/Makefile.in])
 AC_CONFIG_FILES([po/Makevars])
 AC_CONFIG_FILES([manuals/Makefile])
+AC_CONFIG_FILES([tests/Makefile])
 dnl Have configure make the include files
 AC_CONFIG_FILES([include/libcsplit.h])
 AC_CONFIG_FILES([include/libcsplit/definitions.h])
