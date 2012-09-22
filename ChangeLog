@@ -1,4 +1,5 @@
 TODO
+* add split flags to pass control of buffer mgt to split string ?
 * complete stand alone version
 * add tests
 
