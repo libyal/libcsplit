@@ -3,6 +3,10 @@ TODO
 * complete stand alone version
 * add tests
 
+20121103
+* code clean up
+* bug fixes in error handling
+
 20120919
 * updated dependencies
 

@@ -39,7 +39,7 @@ int libcsplit_narrow_split_string_initialize(
      libcerror_error_t **error )
 {
 	libcsplit_internal_narrow_split_string_t *internal_split_string = NULL;
-	static char *function                                          = "libcsplit_narrow_split_string_initialize";
+	static char *function                                           = "libcsplit_narrow_split_string_initialize";
 
 	if( split_string == NULL )
 	{
@@ -50,7 +50,7 @@ int libcsplit_narrow_split_string_initialize(
 		 "%s: invalid split string.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	if( *split_string != NULL )
 	{
@@ -109,7 +109,7 @@ int libcsplit_narrow_split_string_initialize(
 	 && ( string_size > 0 ) )
 	{
 		internal_split_string->string = libcstring_narrow_string_allocate(
-		                             string_size );
+		                                 string_size );
 
 		if( internal_split_string->string == NULL )
 		{
@@ -236,7 +236,7 @@ int libcsplit_narrow_split_string_free(
      libcerror_error_t **error )
 {
 	libcsplit_internal_narrow_split_string_t *internal_split_string = NULL;
-	static char *function                                          = "libcsplit_narrow_split_string_free";
+	static char *function                                           = "libcsplit_narrow_split_string_free";
 
 	if( split_string == NULL )
 	{
@@ -247,7 +247,7 @@ int libcsplit_narrow_split_string_free(
 		 "%s: invalid split string.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	if( *split_string != NULL )
 	{
@@ -285,7 +285,7 @@ int libcsplit_narrow_split_string_get_string(
      libcerror_error_t **error )
 {
 	libcsplit_internal_narrow_split_string_t *internal_split_string = NULL;
-	static char *function                                          = "libcsplit_narrow_split_string_get_string";
+	static char *function                                           = "libcsplit_narrow_split_string_get_string";
 
 	if( split_string == NULL )
 	{
@@ -296,7 +296,7 @@ int libcsplit_narrow_split_string_get_string(
 		 "%s: invalid split string.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	internal_split_string = (libcsplit_internal_narrow_split_string_t *) split_string;
 
@@ -309,7 +309,7 @@ int libcsplit_narrow_split_string_get_string(
 		 "%s: invalid string.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	if( string_size == NULL )
 	{
@@ -320,7 +320,7 @@ int libcsplit_narrow_split_string_get_string(
 		 "%s: invalid string size.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	*string      = internal_split_string->string;
 	*string_size = internal_split_string->string_size;
@@ -337,7 +337,7 @@ int libcsplit_narrow_split_string_get_number_of_segments(
      libcerror_error_t **error )
 {
 	libcsplit_internal_narrow_split_string_t *internal_split_string = NULL;
-	static char *function                                          = "libcsplit_narrow_split_string_get_number_of_segments";
+	static char *function                                           = "libcsplit_narrow_split_string_get_number_of_segments";
 
 	if( split_string == NULL )
 	{
@@ -348,7 +348,7 @@ int libcsplit_narrow_split_string_get_number_of_segments(
 		 "%s: invalid split string.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	internal_split_string = (libcsplit_internal_narrow_split_string_t *) split_string;
 
@@ -361,7 +361,7 @@ int libcsplit_narrow_split_string_get_number_of_segments(
 		 "%s: invalid number of segments.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	*number_of_segments = internal_split_string->number_of_segments;
 
@@ -379,7 +379,7 @@ int libcsplit_narrow_split_string_get_segment_by_index(
      libcerror_error_t **error )
 {
 	libcsplit_internal_narrow_split_string_t *internal_split_string = NULL;
-	static char *function                                          = "libcsplit_narrow_split_string_get_segment_by_index";
+	static char *function                                           = "libcsplit_narrow_split_string_get_segment_by_index";
 
 	if( split_string == NULL )
 	{
@@ -390,7 +390,7 @@ int libcsplit_narrow_split_string_get_segment_by_index(
 		 "%s: invalid split string.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	internal_split_string = (libcsplit_internal_narrow_split_string_t *) split_string;
 
@@ -415,7 +415,7 @@ int libcsplit_narrow_split_string_get_segment_by_index(
 		 "%s: invalid string segment.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	if( string_segment_size == NULL )
 	{
@@ -426,7 +426,7 @@ int libcsplit_narrow_split_string_get_segment_by_index(
 		 "%s: invalid string segment size.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	*string_segment      = internal_split_string->segments[ segment_index ];
 	*string_segment_size = internal_split_string->segment_sizes[ segment_index ];
@@ -445,8 +445,8 @@ int libcsplit_narrow_split_string_set_segment_by_index(
      libcerror_error_t **error )
 {
 	libcsplit_internal_narrow_split_string_t *internal_split_string = NULL;
-	static char *function                                          = "libcsplit_narrow_split_string_set_segment_by_index";
-	size_t string_segment_offset                                   = 0;
+	static char *function                                           = "libcsplit_narrow_split_string_set_segment_by_index";
+	size_t string_segment_offset                                    = 0;
 
 	if( split_string == NULL )
 	{
@@ -457,7 +457,7 @@ int libcsplit_narrow_split_string_set_segment_by_index(
 		 "%s: invalid split string.",
 		 function );
 
-		return( 1 );
+		return( -1 );
 	}
 	internal_split_string = (libcsplit_internal_narrow_split_string_t *) split_string;
 

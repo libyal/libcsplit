@@ -67,7 +67,7 @@ int libcsplit_error_fprint(
 LIBCSPLIT_EXTERN \
 int libcsplit_error_sprint(
      libcsplit_error_t *error,
-     char *string, 
+     char *string,
      size_t size );
 
 /* Prints a backtrace of the error to the stream

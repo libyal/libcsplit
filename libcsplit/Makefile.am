@@ -41,6 +41,6 @@ distclean: clean
 	/bin/rm -f Makefile
 
 splint:
-	@echo "Running splint on libcsplit ..." 
-	-splint -preproc -redef $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(libcsplit_la_SOURCES) 
+	@echo "Running splint on libcsplit ..."
+	-splint -preproc -redef $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(libcsplit_la_SOURCES)
 
