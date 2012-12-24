@@ -5,7 +5,7 @@ Summary: Library to support cross-platform C split string functions
 Group: System Environment/Libraries
 License: LGPL
 Source: %{name}-%{version}.tar.gz
-URL: http://code.google.com/p/libclibs/
+URL: http://code.google.com/p/libcsplit/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 @libcsplit_spec_requires@ @ax_libcerror_spec_requires@ @ax_libcstring_spec_requires@
 @libcsplit_spec_build_requires@ @ax_libcerror_spec_build_requires@ @ax_libcstring_spec_build_requires@
