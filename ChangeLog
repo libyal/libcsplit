@@ -3,6 +3,10 @@ TODO
 * complete stand alone version
 * add tests
 
+20121224
+* changes to .gitignore
+* added msvscpp files
+
 20121103
 * code clean up
 * bug fixes in error handling

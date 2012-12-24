@@ -93,3 +93,4 @@ Makefile.in
 /libcsplit/libcsplit_definitions.h
 # Local library dependencies specific files
 /libcerror
+/libcstring
