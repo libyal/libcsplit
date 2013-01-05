@@ -10,8 +10,8 @@ Package: libcsplit
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Library to support cross-platform C path functions
- libcsplit is a library to support cross-platform C path functions.
+Description: Library to support cross-platform C split string functions
+ libcsplit is a library to support cross-platform C split string functions.
 
 Package: libcsplit-dev
 Section: libdevel
