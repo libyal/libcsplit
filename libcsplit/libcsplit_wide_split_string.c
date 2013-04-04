@@ -30,7 +30,8 @@
 
 #if defined( HAVE_WIDE_CHARACTER_TYPE )
 
-/* Initializes the split string
+/* Creates a split string
+ * Make sure the value split_string is referencing, is set to NULL
  * Returns 1 if successful or -1 on error
  */
 int libcsplit_wide_split_string_initialize(
@@ -230,7 +231,7 @@ on_error:
 	return( -1 );
 }
 
-/* Frees the split string including elements
+/* Frees a split string
  * Returns 1 if successful or -1 on error
  */
 int libcsplit_wide_split_string_free(

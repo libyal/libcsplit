@@ -28,6 +28,7 @@
 #include "libcsplit_types.h"
 
 /* Splits a narrow character string
+ * Make sure the value split_string is referencing, is set to NULL
  * Returns 1 if successful or -1 on error
  */
 int libcsplit_narrow_string_split(

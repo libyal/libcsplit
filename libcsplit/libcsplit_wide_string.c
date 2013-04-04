@@ -30,6 +30,7 @@
 #if defined( HAVE_WIDE_CHARACTER_TYPE )
 
 /* Splits a wide character string
+ * Make sure the value split_string is referencing, is set to NULL
  * Returns 1 if successful or -1 on error
  */
 int libcsplit_wide_string_split(
