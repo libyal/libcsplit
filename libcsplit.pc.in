@@ -6,7 +6,7 @@ includedir=@includedir@
 Name: libuna
 Description: Library to support cross-platform C split string functions
 Version: @VERSION@
-Libs: -L${libdir} -lcpath
+Libs: -L${libdir} -lcsplit
 Libs.private: @ax_libcerror_libs_private@ @ax_libcstring_libs_private@
 Cflags: -I${includedir}
 
