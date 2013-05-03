@@ -37,7 +37,7 @@
 
 #define LIBCSPLIT_VERSION			@VERSION@
 
-/* The libcstring version string
+/* The libcsplit version string
  */
 #define LIBCSPLIT_VERSION_STRING		"@VERSION@"
 
