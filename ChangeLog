@@ -3,6 +3,9 @@ TODO
 * complete stand alone version
 * add tests
 
+20130505
+* removed unused LIBCSPLIT_SEPARATOR
+
 20130503
 * small changes
 

@@ -28,15 +28,7 @@
 
 /* The libcsplit version string
  */
-#define LIBCSPLIT_VERSION_STRING			"@VERSION@"
-
-#if defined( WINAPI )
-#define LIBCSPLIT_SEPARATOR			'\\'
-
-#else
-#define LIBCSPLIT_SEPARATOR			'/'
-
-#endif /* defined( WINAPI ) */
+#define LIBCSPLIT_VERSION_STRING		"@VERSION@"
 
 #endif
 
