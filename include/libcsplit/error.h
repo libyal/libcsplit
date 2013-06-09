@@ -32,7 +32,7 @@ typedef intptr_t libcsplit_error_t;
  */
 enum LIBCSPLIT_ERROR_DOMAINS
 {
-	LIBCSPLIT_ERROR_DOMAIN_ARGUMENTS			= (int) 'a',
+	LIBCSPLIT_ERROR_DOMAIN_ARGUMENTS		= (int) 'a',
 	LIBCSPLIT_ERROR_DOMAIN_CONVERSION		= (int) 'c',
 	LIBCSPLIT_ERROR_DOMAIN_COMPRESSION		= (int) 'C',
 	LIBCSPLIT_ERROR_DOMAIN_IO			= (int) 'I',
@@ -47,7 +47,7 @@ enum LIBCSPLIT_ERROR_DOMAINS
  */
 enum LIBCSPLIT_ARGUMENT_ERROR
 {
-	LIBCSPLIT_ARGUMENT_ERROR_GENERIC			= 0,
+	LIBCSPLIT_ARGUMENT_ERROR_GENERIC		= 0,
 
 	/* The argument contains an invalid value
 	 */
@@ -68,11 +68,11 @@ enum LIBCSPLIT_ARGUMENT_ERROR
 
 	/* The argument contains a value that is too small
 	 */
-	LIBCSPLIT_ARGUMENT_ERROR_VALUE_TOO_SMALL		= 5,
+	LIBCSPLIT_ARGUMENT_ERROR_VALUE_TOO_SMALL	= 5,
 
 	/* The argument contains a value that is too large
 	 */
-	LIBCSPLIT_ARGUMENT_ERROR_VALUE_TOO_LARGE		= 6,
+	LIBCSPLIT_ARGUMENT_ERROR_VALUE_TOO_LARGE	= 6,
 
 	/* The argument contains a value that is out of bounds
 	 */
@@ -100,7 +100,7 @@ enum LIBCSPLIT_CONVERSION_ERROR
 
 	/* The conversion failed on the output
 	 */
-	LIBCSPLIT_CONVERSION_ERROR_OUTPUT_FAILED		= 2
+	LIBCSPLIT_CONVERSION_ERROR_OUTPUT_FAILED	= 2
 };
 
 /* The compression error codes
@@ -148,7 +148,7 @@ enum LIBCSPLIT_IO_ERROR
 
 	/* Access denied
 	 */
-	LIBCSPLIT_IO_ERROR_ACCESS_DENIED			= 6,
+	LIBCSPLIT_IO_ERROR_ACCESS_DENIED		= 6,
 
 	/* The resource is invalid i.e. a missing file
 	 */
@@ -160,7 +160,7 @@ enum LIBCSPLIT_IO_ERROR
 
 	/* The unlink failed
 	 */
-	LIBCSPLIT_IO_ERROR_UNLINK_FAILED			= 9
+	LIBCSPLIT_IO_ERROR_UNLINK_FAILED		= 9
 };
 
 /* The input error codes
@@ -176,7 +176,7 @@ enum LIBCSPLIT_INPUT_ERROR
 
 	/* The input contains an unsupported signature
 	 */
-	LIBCSPLIT_INPUT_ERROR_SIGNATURE_MISMATCH		= 2,
+	LIBCSPLIT_INPUT_ERROR_SIGNATURE_MISMATCH	= 2,
 
 	/* A checksum in the input did not match
 	 */
