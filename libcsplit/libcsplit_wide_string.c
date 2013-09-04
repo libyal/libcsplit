@@ -219,8 +219,7 @@ int libcsplit_wide_string_split(
 
 		goto on_error;
 	}
-	segment_end = segment_start;
-	string_end  = &( segment_start[ string_size - 1 ] );
+	string_end = &( segment_start[ string_size - 1 ] );
 
 	for( segment_index = 0;
 	     segment_index < number_of_segments;
