@@ -1,6 +1,6 @@
 MSVSCPP_FILES = \
 	libcerror/libcerror.vcproj \
-	libcsplit_dll/libcsplit_dll.vcproj \
+	libcsplit/libcsplit.vcproj \
 	libcstring/libcstring.vcproj \
 	libcsplit.sln
 
