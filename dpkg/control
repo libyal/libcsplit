@@ -10,8 +10,16 @@ Package: libcsplit
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: libcsplit-dbg
 Description: Library to support cross-platform C split string functions
  libcsplit is a library to support cross-platform C split string functions.
+
+Package: libcsplit-dbg
+Architecture: any
+Section: debug
+Depends: libcsplit (= ${Source-Version}), ${misc:Depends}
+Description: Debugging symbols for libcsplit
+ Debugging symbols for libcsplit.
 
 Package: libcsplit-dev
 Section: libdevel
