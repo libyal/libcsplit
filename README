@@ -1,4 +1,6 @@
-See:
-* http://code.google.com/p/libcsplit/wiki/Building
-* README.macosx
+libcsplit is a library for cross-platform C split string functions.
+
+For more information see:
+* Project documentation: https://github.com/libyal/libcsplit/wiki/Home
+* How to build from source: https://github.com/libyal/libcsplit/wiki/Building
 
