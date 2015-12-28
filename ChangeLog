@@ -2,6 +2,9 @@ TODO
 * add split flags to pass control of buffer mgt to split string ?
 * add tests
 
+20151228
+* updated dependencies
+
 20150104
 * corrections in include header
 * update man page: libcsplit.3
