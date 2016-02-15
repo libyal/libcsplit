@@ -23,9 +23,8 @@
 #define _LIBCSPLIT_INTERNAL_ERROR_H
 
 #include <common.h>
+#include <file_stream.h>
 #include <types.h>
-
-#include <stdio.h>
 
 #if !defined( HAVE_LOCAL_LIBCSPLIT )
 #include <libcsplit/error.h>
@@ -71,5 +70,5 @@ int libcsplit_error_backtrace_sprint(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCSPLIT_INTERNAL_ERROR_H ) */
 
