@@ -21,7 +21,7 @@ libcsplit_la_SOURCES = \
 	libcsplit_wide_split_string.c libcsplit_wide_split_string.h \
 	libcsplit_wide_string.c libcsplit_wide_string.h
 
-libcsplit_la_LIBADD  = \
+libcsplit_la_LIBADD = \
 	@LIBCSTRING_LIBADD@ \
 	@LIBCERROR_LIBADD@
 
