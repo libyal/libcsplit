@@ -1,6 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "csplit_test_get_version", "csplit_test_get_version\csplit_test_get_version.vcproj", "{F2BB7983-C400-4D71-BF49-BEA3FDEF7B8C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BB5526FB-0C7E-457A-B76C-1436981E247C} = {BB5526FB-0C7E-457A-B76C-1436981E247C}
+		{20FFC4C9-F44C-45F6-A827-4819B4DF3C9F} = {20FFC4C9-F44C-45F6-A827-4819B4DF3C9F}
+	EndProjectSection
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcstring", "libcstring\libcstring.vcproj", "{20FFC4C9-F44C-45F6-A827-4819B4DF3C9F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcerror", "libcerror\libcerror.vcproj", "{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}"
@@ -20,6 +26,10 @@ Global
 		VSDebug|Win32 = VSDebug|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2BB7983-C400-4D71-BF49-BEA3FDEF7B8C}.Release|Win32.ActiveCfg = Release|Win32
+		{F2BB7983-C400-4D71-BF49-BEA3FDEF7B8C}.Release|Win32.Build.0 = Release|Win32
+		{F2BB7983-C400-4D71-BF49-BEA3FDEF7B8C}.VSDebug|Win32.ActiveCfg = VSDebug|Win32
+		{F2BB7983-C400-4D71-BF49-BEA3FDEF7B8C}.VSDebug|Win32.Build.0 = VSDebug|Win32
 		{20FFC4C9-F44C-45F6-A827-4819B4DF3C9F}.Release|Win32.ActiveCfg = Release|Win32
 		{20FFC4C9-F44C-45F6-A827-4819B4DF3C9F}.Release|Win32.Build.0 = Release|Win32
 		{20FFC4C9-F44C-45F6-A827-4819B4DF3C9F}.VSDebug|Win32.ActiveCfg = VSDebug|Win32

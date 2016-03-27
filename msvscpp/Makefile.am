@@ -1,4 +1,5 @@
 MSVSCPP_FILES = \
+	csplit_test_get_version/csplit_test_get_version.vcproj \
 	libcerror/libcerror.vcproj \
 	libcsplit/libcsplit.vcproj \
 	libcstring/libcstring.vcproj \
