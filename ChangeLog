@@ -1,6 +1,10 @@
 TODO
-* add split flags to pass control of buffer mgt to split string ?
-* add tests
+* add split flags to pass control of buffer management to split string?
+
+Tests:
+* add tests for error
+* add tests for narrow_split_string
+* add tests for wide_split_string
 
 20160125
 * updated dependencies
