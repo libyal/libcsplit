@@ -25,20 +25,26 @@
 #include <common.h>
 
 #if !defined( CSPLIT_TEST_ATTRIBUTE_UNUSED )
+
 #if defined( __GNUC__ ) && __GNUC__ >= 3
 #define CSPLIT_TEST_ATTRIBUTE_UNUSED	__attribute__ ((__unused__))
+
 #else
 #define CSPLIT_TEST_ATTRIBUTE_UNUSED
-#endif
-#endif
+
+#endif /* defined( __GNUC__ ) && __GNUC__ >= 3 */
+
+#endif /* !defined( CSPLIT_TEST_ATTRIBUTE_UNUSED ) */
 
 #if defined( _MSC_VER )
 #define CSPLIT_TEST_UNREFERENCED_PARAMETER( parameter ) \
 	UNREFERENCED_PARAMETER( parameter );
+
 #else
 #define CSPLIT_TEST_UNREFERENCED_PARAMETER( parameter ) \
 	/* parameter */
-#endif
 
-#endif
+#endif /* defined( _MSC_VER ) */
+
+#endif /* !defined( _CSPLIT_TEST_UNUSED_H ) */
 

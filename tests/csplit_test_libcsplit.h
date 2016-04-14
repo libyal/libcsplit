@@ -24,14 +24,14 @@
 
 #include <common.h>
 
-/* If Cygwin libtool DLL support is enabled set LIBCSPLIT_DLL_IMPORT
- * before including libcsplit.h
+/* If Cygwin libtool DLL support is enabled and do not want to create static
+ * executables set LIBCSPLIT_DLL_IMPORT before including libcsplit.h
  */
-#if defined( _WIN32 ) && defined( DLL_EXPORT )
+#if defined( _WIN32 ) && defined( DLL_EXPORT ) && !defined( HAVE_STATIC_EXECUTABLES )
 #define LIBCSPLIT_DLL_IMPORT
 #endif
 
 #include <libcsplit.h>
 
-#endif
+#endif /* !defined( _CSPLIT_TEST_LIBCSPLIT_H ) */
 

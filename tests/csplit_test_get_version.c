@@ -28,16 +28,19 @@
 
 #include "csplit_test_libcsplit.h"
 #include "csplit_test_libcstring.h"
+#include "csplit_test_unused.h"
 
 /* The main program
  */
 #if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
-int wmain( int argc, wchar_t * const argv[] )
+int wmain( int argc, wchar_t * const argv[] CSPLIT_TEST_ATTRIBUTE_UNUSED )
 #else
-int main( int argc, char * const argv[] )
+int main( int argc, char * const argv[] CSPLIT_TEST_ATTRIBUTE_UNUSED )
 #endif
 {
 	const char *version_string = NULL;
+
+	CSPLIT_TEST_UNREFERENCED_PARAMETER( argv )
 
 	if( argc != 1 )
 	{
