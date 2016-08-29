@@ -45,5 +45,5 @@ int libcsplit_narrow_string_split(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCSPLIT_NARROW_STRING_H ) */
 

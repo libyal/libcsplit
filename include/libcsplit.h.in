@@ -233,5 +233,5 @@ int libcsplit_wide_split_string_set_segment_by_index(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCSPLIT_H ) */
 

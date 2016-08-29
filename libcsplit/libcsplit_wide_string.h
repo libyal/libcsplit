@@ -49,5 +49,5 @@ int libcsplit_wide_string_split(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCSPLIT_WIDE_STRING_H ) */
 

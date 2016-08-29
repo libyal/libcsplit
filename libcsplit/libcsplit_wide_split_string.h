@@ -67,21 +67,25 @@ int libcsplit_wide_split_string_initialize(
      int number_of_segments,
      libcerror_error_t **error );
 
+LIBCSPLIT_EXTERN \
 int libcsplit_wide_split_string_free(
      libcsplit_wide_split_string_t **split_string,
      libcerror_error_t **error );
 
+LIBCSPLIT_EXTERN \
 int libcsplit_wide_split_string_get_string(
      libcsplit_wide_split_string_t *split_string,
      wchar_t **string,
      size_t *string_size,
      libcerror_error_t **error );
 
+LIBCSPLIT_EXTERN \
 int libcsplit_wide_split_string_get_number_of_segments(
      libcsplit_wide_split_string_t *split_string,
      int *number_of_segments,
      libcerror_error_t **error );
 
+LIBCSPLIT_EXTERN \
 int libcsplit_wide_split_string_get_segment_by_index(
      libcsplit_wide_split_string_t *split_string,
      int segment_index,
@@ -89,6 +93,7 @@ int libcsplit_wide_split_string_get_segment_by_index(
      size_t *string_segment_size,
      libcerror_error_t **error );
 
+LIBCSPLIT_EXTERN \
 int libcsplit_wide_split_string_set_segment_by_index(
      libcsplit_wide_split_string_t *split_string,
      int segment_index,
@@ -102,5 +107,5 @@ int libcsplit_wide_split_string_set_segment_by_index(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCSPLIT_INTERNAL_WIDE_SPLIT_STRING_H ) */
 

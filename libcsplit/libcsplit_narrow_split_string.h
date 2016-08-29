@@ -103,5 +103,5 @@ int libcsplit_narrow_split_string_set_segment_by_index(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCSPLIT_INTERNAL_NARROW_SPLIT_STRING_H ) */
 
