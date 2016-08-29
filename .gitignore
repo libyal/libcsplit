@@ -119,6 +119,7 @@ stamp-h[1-9]
 /include/libcsplit/types.h
 /libcsplit/libcsplit.rc
 /libcsplit/libcsplit_definitions.h
+/tests/csplit_test_error
 /tests/csplit_test_get_version
 /tests/tmp*
 
