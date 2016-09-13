@@ -25,8 +25,8 @@
 #include <stdlib.h>
 #endif
 
-#include "csplit_test_libcstring.h"
 #include "csplit_test_libcsplit.h"
+#include "csplit_test_libcstring.h"
 #include "csplit_test_macros.h"
 #include "csplit_test_unused.h"
 
