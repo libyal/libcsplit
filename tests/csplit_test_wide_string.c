@@ -1,5 +1,5 @@
 /*
- * Library narrow string functions test program
+ * Library wide string functions test program
  *
  * Copyright (C) 2008-2016, Joachim Metz <joachim.metz@gmail.com>
  *
@@ -32,22 +32,24 @@
 #include "csplit_test_macros.h"
 #include "csplit_test_unused.h"
 
-/* Tests the libcsplit_narrow_string_split function
+#if defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE )
+
+/* Tests the libcsplit_wide_string_split function
  * Returns 1 if successful or 0 if not
  */
-int csplit_test_narrow_string_split(
+int csplit_test_wide_string_split(
      void )
 {
-	libcerror_error_t *error                      = NULL;
-	libcsplit_narrow_split_string_t *split_string = NULL;
-	int result                                    = 0;
+	libcerror_error_t *error                    = NULL;
+	libcsplit_wide_split_string_t *split_string = NULL;
+	int result                                  = 0;
 
 	/* Test error cases
 	 */
-	result = libcsplit_narrow_string_split(
+	result = libcsplit_wide_string_split(
 	          NULL,
 	          10,
-	          ' ',
+	          (wchar_t) ' ',
 	          &split_string,
 	          &error );
 
@@ -63,10 +65,10 @@ int csplit_test_narrow_string_split(
 	libcerror_error_free(
 	 &error );
 
-	result = libcsplit_narrow_string_split(
-	          "1 2 3 4 5",
+	result = libcsplit_wide_string_split(
+	          L"1 2 3 4 5",
 	          (size_t) SSIZE_MAX + 1,
-	          ' ',
+	          (wchar_t) ' ',
 	          &split_string,
 	          &error );
 
@@ -82,10 +84,10 @@ int csplit_test_narrow_string_split(
 	libcerror_error_free(
 	 &error );
 
-	result = libcsplit_narrow_string_split(
-	          "1 2 3 4 5",
+	result = libcsplit_wide_string_split(
+	          L"1 2 3 4 5",
 	          10,
-	          ' ',
+	          (wchar_t) ' ',
 	          NULL,
 	          &error );
 
@@ -112,6 +114,8 @@ on_error:
 	return( 0 );
 }
 
+#endif /* defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE ) */
+
 /* The main program
  */
 #if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
@@ -127,9 +131,13 @@ int main(
 	CSPLIT_TEST_UNREFERENCED_PARAMETER( argc )
 	CSPLIT_TEST_UNREFERENCED_PARAMETER( argv )
 
+#if defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE )
+
 	CSPLIT_TEST_RUN(
-	 "libcsplit_narrow_string_split",
-	 csplit_test_narrow_string_split );
+	 "libcsplit_wide_string_split",
+	 csplit_test_wide_string_split );
+
+#endif /* defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE ) */
 
 	return( EXIT_SUCCESS );
 
