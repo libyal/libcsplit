@@ -10,7 +10,7 @@ $TestPrefix = Split-Path -path ${Pwd}.Path -parent
 $TestPrefix = Split-Path -path ${TestPrefix} -leaf
 $TestPrefix = ${TestPrefix}.Substring(3)
 
-$TestFunctions = "error support" -split " "
+$TestFunctions = "error narrow_string support wide_string" -split " "
 
 $TestToolDirectory = "..\vs2010\Release"
 

@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="csplit_test_narrow_split_string"
-	ProjectGUID="{4E6C7C70-50A9-450E-AA77-61DA7F356C99}"
-	RootNamespace="csplit_test_narrow_split_string"
+	Name="csplit_test_wide_string"
+	ProjectGUID="{9EE6D24B-48A8-45C0-B799-87E75F43808F}"
+	RootNamespace="csplit_test_wide_string"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="131072"
 	>
@@ -180,7 +180,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\tests\csplit_test_narrow_split_string.c"
+				RelativePath="..\..\tests\csplit_test_wide_string.c"
 				>
 			</File>
 		</Filter>

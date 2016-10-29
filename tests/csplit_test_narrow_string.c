@@ -1,5 +1,5 @@
 /*
- * Library support functions test program
+ * Library narrow string functions test program
  *
  * Copyright (C) 2008-2016, Joachim Metz <joachim.metz@gmail.com>
  *
@@ -26,35 +26,89 @@
 #include <stdlib.h>
 #endif
 
+#include "csplit_test_libcerror.h"
 #include "csplit_test_libcsplit.h"
 #include "csplit_test_libcstring.h"
 #include "csplit_test_macros.h"
 #include "csplit_test_unused.h"
 
-/* Tests the libcsplit_get_version function
+/* Tests the libcsplit_narrow_string_split function
  * Returns 1 if successful or 0 if not
  */
-int csplit_test_get_version(
+int csplit_test_narrow_string_split(
      void )
 {
-	const char *version_string = NULL;
-	int result                 = 0;
+	libcerror_error_t *error                      = NULL;
+	libcsplit_narrow_split_string_t *split_string = NULL;
+	int result                                    = 0;
 
-	version_string = libcsplit_get_version();
-
-	result = libcstring_narrow_string_compare(
-	          version_string,
-	          LIBCSPLIT_VERSION_STRING,
-	          9 );
+	/* Test error cases
+	 */
+	result = libcsplit_narrow_string_split(
+	          NULL,
+	          10,
+	          ' ',
+	          &split_string,
+	          &error );
 
 	CSPLIT_TEST_ASSERT_EQUAL_INT(
 	 "result",
 	 result,
-	 0 );
+	 -1 );
+
+        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libcsplit_narrow_string_split(
+	          "1 2 3 4 5",
+	          (size_t) SSIZE_MAX + 1,
+	          ' ',
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libcsplit_narrow_string_split(
+	          "1 2 3 4 5",
+	          10,
+	          ' ',
+	          NULL,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
 
 	return( 1 );
 
 on_error:
+	if( error != NULL )
+	{
+		libcerror_error_free(
+		 &error );
+	}
 	return( 0 );
 }
 
@@ -74,8 +128,8 @@ int main(
 	CSPLIT_TEST_UNREFERENCED_PARAMETER( argv )
 
 	CSPLIT_TEST_RUN(
-	 "libcsplit_get_version",
-	 csplit_test_get_version );
+	 "libcsplit_narrow_string_split",
+	 csplit_test_narrow_string_split );
 
 	return( EXIT_SUCCESS );
 
