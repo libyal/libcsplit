@@ -120,8 +120,8 @@ stamp-h[1-9]
 /libcsplit/libcsplit.rc
 /libcsplit/libcsplit_definitions.h
 /tests/csplit_test_error
-/tests/csplit_test_get_version
 /tests/csplit_test_narrow_split_string
+/tests/csplit_test_support
 /tests/tmp*
 
 # Local library dependencies specific files

@@ -19,8 +19,8 @@ EXTRA_DIST = \
 
 check_PROGRAMS = \
 	csplit_test_error \
-	csplit_test_get_version \
-	csplit_test_narrow_split_string
+	csplit_test_narrow_split_string \
+	csplit_test_support
 
 csplit_test_error_SOURCES = \
 	csplit_test_error.c \
@@ -30,17 +30,6 @@ csplit_test_error_SOURCES = \
 	csplit_test_unused.h
 
 csplit_test_error_LDADD = \
-	../libcsplit/libcsplit.la \
-	@LIBCSTRING_LIBADD@
-
-csplit_test_get_version_SOURCES = \
-	csplit_test_get_version.c \
-	csplit_test_libcsplit.h \
-	csplit_test_libcstring.h \
-	csplit_test_macros.h \
-	csplit_test_unused.h
-
-csplit_test_get_version_LDADD = \
 	../libcsplit/libcsplit.la \
 	@LIBCSTRING_LIBADD@
 
@@ -55,6 +44,17 @@ csplit_test_narrow_split_string_SOURCES = \
 csplit_test_narrow_split_string_LDADD = \
 	../libcsplit/libcsplit.la \
 	@LIBCERROR_LIBADD@ \
+	@LIBCSTRING_LIBADD@
+
+csplit_test_support_SOURCES = \
+	csplit_test_libcsplit.h \
+	csplit_test_libcstring.h \
+	csplit_test_macros.h \
+	csplit_test_support.c \
+	csplit_test_unused.h
+
+csplit_test_support_LDADD = \
+	../libcsplit/libcsplit.la \
 	@LIBCSTRING_LIBADD@
 
 MAINTAINERCLEANFILES = \

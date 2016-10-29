@@ -1,7 +1,7 @@
 MSVSCPP_FILES = \
 	csplit_test_error/csplit_test_error.vcproj \
-	csplit_test_get_version/csplit_test_get_version.vcproj \
 	csplit_test_narrow_split_string/csplit_test_narrow_split_string.vcproj \
+	csplit_test_support/csplit_test_support.vcproj \
 	libcerror/libcerror.vcproj \
 	libcsplit/libcsplit.vcproj \
 	libcstring/libcstring.vcproj \
