@@ -284,13 +284,13 @@ int main(
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_narrow_split_string_initialize",
-	 csplit_test_narrow_split_string_initialize() )
+	 csplit_test_narrow_split_string_initialize );
 
 #endif /* defined( __GNUC__ ) */
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_narrow_split_string_free",
-	 csplit_test_narrow_split_string_free() )
+	 csplit_test_narrow_split_string_free );
 
 	/* TODO: add test for libcsplit_narrow_split_string_get_string */
 	/* TODO: add test for libcsplit_narrow_split_string_get_number_of_segments */

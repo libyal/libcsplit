@@ -123,23 +123,23 @@ int main(
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_error_free",
-	 csplit_test_error_free() )
+	 csplit_test_error_free );
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_error_fprint",
-	 csplit_test_error_fprint() )
+	 csplit_test_error_fprint );
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_error_sprint",
-	 csplit_test_error_sprint() )
+	 csplit_test_error_sprint );
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_error_backtrace_fprint",
-	 csplit_test_error_backtrace_fprint() )
+	 csplit_test_error_backtrace_fprint );
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_error_backtrace_sprint",
-	 csplit_test_error_backtrace_sprint() )
+	 csplit_test_error_backtrace_sprint );
 
 	return( EXIT_SUCCESS );
 
