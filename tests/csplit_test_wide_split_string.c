@@ -1,5 +1,5 @@
 /*
- * Library narrow_split_string type testing program
+ * Library wide_split_string type testing program
  *
  * Copyright (C) 2011-2016, Joachim Metz <joachim.metz@gmail.com>
  *
@@ -33,30 +33,32 @@
 #include "csplit_test_memory.h"
 #include "csplit_test_unused.h"
 
+#if defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE )
+
 #if defined( __GNUC__ )
 
 extern \
-int libcsplit_narrow_split_string_initialize(
-     libcsplit_narrow_split_string_t **split_string,
+int libcsplit_wide_split_string_initialize(
+     libcsplit_wide_split_string_t **split_string,
      const char *string,
      size_t string_size,
      int number_of_segments,
      libcerror_error_t **error );
 
-/* Tests the libcsplit_narrow_split_string_initialize function
+/* Tests the libcsplit_wide_split_string_initialize function
  * Returns 1 if successful or 0 if not
  */
-int csplit_test_narrow_split_string_initialize(
+int csplit_test_wide_split_string_initialize(
      void )
 {
-	libcsplit_narrow_split_string_t *narrow_split_string = NULL;
-	libcerror_error_t *error                             = NULL;
-	int result                                           = 0;
+	libcsplit_wide_split_string_t *wide_split_string = NULL;
+	libcerror_error_t *error                         = NULL;
+	int result                                       = 0;
 
-	/* Test libcsplit_narrow_split_string_initialize
+	/* Test libcsplit_wide_split_string_initialize
 	 */
-	result = libcsplit_narrow_split_string_initialize(
-	          &narrow_split_string,
+	result = libcsplit_wide_split_string_initialize(
+	          &wide_split_string,
 	          "Test",
 	          4,
 	          1,
@@ -68,15 +70,15 @@ int csplit_test_narrow_split_string_initialize(
 	 1 );
 
         CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "narrow_split_string",
-         narrow_split_string );
+         "wide_split_string",
+         wide_split_string );
 
         CSPLIT_TEST_ASSERT_IS_NULL(
          "error",
          error );
 
-	result = libcsplit_narrow_split_string_free(
-	          &narrow_split_string,
+	result = libcsplit_wide_split_string_free(
+	          &wide_split_string,
 	          &error );
 
 	CSPLIT_TEST_ASSERT_EQUAL_INT(
@@ -85,8 +87,8 @@ int csplit_test_narrow_split_string_initialize(
 	 1 );
 
         CSPLIT_TEST_ASSERT_IS_NULL(
-         "narrow_split_string",
-         narrow_split_string );
+         "wide_split_string",
+         wide_split_string );
 
         CSPLIT_TEST_ASSERT_IS_NULL(
          "error",
@@ -94,7 +96,7 @@ int csplit_test_narrow_split_string_initialize(
 
 	/* Test error cases
 	 */
-	result = libcsplit_narrow_split_string_initialize(
+	result = libcsplit_wide_split_string_initialize(
 	          NULL,
 	          "Test",
 	          4,
@@ -113,10 +115,10 @@ int csplit_test_narrow_split_string_initialize(
 	libcerror_error_free(
 	 &error );
 
-	narrow_split_string = (libcsplit_narrow_split_string_t *) 0x12345678UL;
+	wide_split_string = (libcsplit_wide_split_string_t *) 0x12345678UL;
 
-	result = libcsplit_narrow_split_string_initialize(
-	          &narrow_split_string,
+	result = libcsplit_wide_split_string_initialize(
+	          &wide_split_string,
 	          "Test",
 	          4,
 	          1,
@@ -134,16 +136,16 @@ int csplit_test_narrow_split_string_initialize(
 	libcerror_error_free(
 	 &error );
 
-	narrow_split_string = NULL;
+	wide_split_string = NULL;
 
 #if defined( HAVE_CSPLIT_TEST_MEMORY )
 
-	/* Test libcsplit_narrow_split_string_initialize with malloc failing
+	/* Test libcsplit_wide_split_string_initialize with malloc failing
 	 */
 	csplit_test_malloc_attempts_before_fail = 0;
 
-	result = libcsplit_narrow_split_string_initialize(
-	          &narrow_split_string,
+	result = libcsplit_wide_split_string_initialize(
+	          &wide_split_string,
 	          "Test",
 	          4,
 	          1,
@@ -161,8 +163,8 @@ int csplit_test_narrow_split_string_initialize(
 		 -1 );
 
 		CSPLIT_TEST_ASSERT_IS_NULL(
-		 "narrow_split_string",
-		 narrow_split_string );
+		 "wide_split_string",
+		 wide_split_string );
 
 		CSPLIT_TEST_ASSERT_IS_NOT_NULL(
 		 "error",
@@ -171,12 +173,12 @@ int csplit_test_narrow_split_string_initialize(
 		libcerror_error_free(
 		 &error );
 	}
-	/* Test libcsplit_narrow_split_string_initialize with memset failing
+	/* Test libcsplit_wide_split_string_initialize with memset failing
 	 */
 	csplit_test_memset_attempts_before_fail = 0;
 
-	result = libcsplit_narrow_split_string_initialize(
-	          &narrow_split_string,
+	result = libcsplit_wide_split_string_initialize(
+	          &wide_split_string,
 	          "Test",
 	          4,
 	          1,
@@ -194,8 +196,8 @@ int csplit_test_narrow_split_string_initialize(
 		 -1 );
 
 		CSPLIT_TEST_ASSERT_IS_NULL(
-		 "narrow_split_string",
-		 narrow_split_string );
+		 "wide_split_string",
+		 wide_split_string );
 
 		CSPLIT_TEST_ASSERT_IS_NOT_NULL(
 		 "error",
@@ -214,10 +216,10 @@ on_error:
 		libcerror_error_free(
 		 &error );
 	}
-	if( narrow_split_string != NULL )
+	if( wide_split_string != NULL )
 	{
-		libcsplit_narrow_split_string_free(
-		 &narrow_split_string,
+		libcsplit_wide_split_string_free(
+		 &wide_split_string,
 		 NULL );
 	}
 	return( 0 );
@@ -225,10 +227,10 @@ on_error:
 
 #endif /* defined( __GNUC__ ) */
 
-/* Tests the libcsplit_narrow_split_string_free function
+/* Tests the libcsplit_wide_split_string_free function
  * Returns 1 if successful or 0 if not
  */
-int csplit_test_narrow_split_string_free(
+int csplit_test_wide_split_string_free(
      void )
 {
 	libcerror_error_t *error = NULL;
@@ -236,7 +238,7 @@ int csplit_test_narrow_split_string_free(
 
 	/* Test error cases
 	 */
-	result = libcsplit_narrow_split_string_free(
+	result = libcsplit_wide_split_string_free(
 	          NULL,
 	          &error );
 
@@ -263,20 +265,20 @@ on_error:
 	return( 0 );
 }
 
-/* Tests the libcsplit_narrow_split_string_get_string function
+/* Tests the libcsplit_wide_split_string_get_string function
  * Returns 1 if successful or 0 if not
  */
-int csplit_test_narrow_split_string_get_string(
+int csplit_test_wide_split_string_get_string(
      void )
 {
 	libcerror_error_t *error = NULL;
-	char *string             = NULL;
+	wchar_t *string          = NULL;
 	size_t string_size       = 0;
 	int result               = 0;
 
 	/* Test error cases
 	 */
-	result = libcsplit_narrow_split_string_get_string(
+	result = libcsplit_wide_split_string_get_string(
 	          NULL,
 	          &string,
 	          &string_size,
@@ -305,10 +307,10 @@ on_error:
 	return( 0 );
 }
 
-/* Tests the libcsplit_narrow_split_string_get_number_of_segments function
+/* Tests the libcsplit_wide_split_string_get_number_of_segments function
  * Returns 1 if successful or 0 if not
  */
-int csplit_test_narrow_split_string_get_number_of_segments(
+int csplit_test_wide_split_string_get_number_of_segments(
      void )
 {
 	libcerror_error_t *error = NULL;
@@ -317,7 +319,7 @@ int csplit_test_narrow_split_string_get_number_of_segments(
 
 	/* Test error cases
 	 */
-	result = libcsplit_narrow_split_string_get_number_of_segments(
+	result = libcsplit_wide_split_string_get_number_of_segments(
 	          NULL,
 	          &number_of_segments,
 	          &error );
@@ -345,20 +347,20 @@ on_error:
 	return( 0 );
 }
 
-/* Tests the libcsplit_narrow_split_string_get_segment_by_index function
+/* Tests the libcsplit_wide_split_string_get_segment_by_index function
  * Returns 1 if successful or 0 if not
  */
-int csplit_test_narrow_split_string_get_segment_by_index(
+int csplit_test_wide_split_string_get_segment_by_index(
      void )
 {
 	libcerror_error_t *error   = NULL;
-	char *string_segment       = NULL;
+	wchar_t *string_segment    = NULL;
 	size_t string_segment_size = 0;
 	int result                 = 0;
 
 	/* Test error cases
 	 */
-	result = libcsplit_narrow_split_string_get_segment_by_index(
+	result = libcsplit_wide_split_string_get_segment_by_index(
 	          NULL,
 	          0,
 	          &string_segment,
@@ -388,6 +390,8 @@ on_error:
 	return( 0 );
 }
 
+#endif /* defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE ) */
+
 /* The main program
  */
 #if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
@@ -403,31 +407,35 @@ int main(
 	CSPLIT_TEST_UNREFERENCED_PARAMETER( argc )
 	CSPLIT_TEST_UNREFERENCED_PARAMETER( argv )
 
+#if defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE )
+
 #if defined( __GNUC__ )
 
 	CSPLIT_TEST_RUN(
-	 "libcsplit_narrow_split_string_initialize",
-	 csplit_test_narrow_split_string_initialize );
+	 "libcsplit_wide_split_string_initialize",
+	 csplit_test_wide_split_string_initialize );
 
 #endif /* defined( __GNUC__ ) */
 
 	CSPLIT_TEST_RUN(
-	 "libcsplit_narrow_split_string_free",
-	 csplit_test_narrow_split_string_free );
+	 "libcsplit_wide_split_string_free",
+	 csplit_test_wide_split_string_free );
 
 	CSPLIT_TEST_RUN(
-	 "libcsplit_narrow_split_string_get_string",
-	 csplit_test_narrow_split_string_get_string );
+	 "libcsplit_wide_split_string_get_string",
+	 csplit_test_wide_split_string_get_string );
 
 	CSPLIT_TEST_RUN(
-	 "libcsplit_narrow_split_string_get_number_of_segments",
-	 csplit_test_narrow_split_string_get_number_of_segments );
+	 "libcsplit_wide_split_string_get_number_of_segments",
+	 csplit_test_wide_split_string_get_number_of_segments );
 
 	CSPLIT_TEST_RUN(
-	 "libcsplit_narrow_split_string_get_segment_by_index",
-	 csplit_test_narrow_split_string_get_segment_by_index );
+	 "libcsplit_wide_split_string_get_segment_by_index",
+	 csplit_test_wide_split_string_get_segment_by_index );
 
-	/* TODO: add test for libcsplit_narrow_split_string_set_segment_by_index */
+	/* TODO: add test for libcsplit_wide_split_string_set_segment_by_index */
+
+#endif /* defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE ) */
 
 	return( EXIT_SUCCESS );
 

@@ -11,7 +11,7 @@ TEST_PREFIX=`dirname ${PWD}`;
 TEST_PREFIX=`basename ${TEST_PREFIX} | sed 's/^lib\([^-]*\).*$/\1/'`;
 
 TEST_PROFILE="lib${TEST_PREFIX}";
-TEST_TYPES="narrow_split_string";
+TEST_TYPES="narrow_split_string wide_split_string";
 TEST_TYPES_WITH_INPUT="";
 OPTION_SETS="";
 

@@ -122,6 +122,7 @@ stamp-h[1-9]
 /tests/csplit_test_error
 /tests/csplit_test_narrow_split_string
 /tests/csplit_test_support
+/tests/csplit_test_wide_split_string
 /tests/tmp*
 
 # Local library dependencies specific files
