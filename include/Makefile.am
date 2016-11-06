@@ -2,7 +2,6 @@ include_HEADERS = \
 	libcsplit.h
 
 pkginclude_HEADERS = \
-	libcsplit/codepage.h \
 	libcsplit/definitions.h \
 	libcsplit/error.h \
 	libcsplit/extern.h \

@@ -22,7 +22,6 @@
 #if !defined( _LIBCSPLIT_H )
 #define _LIBCSPLIT_H
 
-#include <libcsplit/codepage.h>
 #include <libcsplit/definitions.h>
 #include <libcsplit/error.h>
 #include <libcsplit/extern.h>

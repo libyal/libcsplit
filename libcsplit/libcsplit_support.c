@@ -23,8 +23,6 @@
 #include <types.h>
 
 #include "libcsplit_definitions.h"
-#include "libcsplit_libcerror.h"
-#include "libcsplit_libcstring.h"
 #include "libcsplit_support.h"
 
 #if !defined( HAVE_LOCAL_LIBCSPLIT )

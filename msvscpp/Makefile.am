@@ -7,7 +7,6 @@ MSVSCPP_FILES = \
 	csplit_test_wide_string/csplit_test_wide_string.vcproj \
 	libcerror/libcerror.vcproj \
 	libcsplit/libcsplit.vcproj \
-	libcstring/libcstring.vcproj \
 	libcsplit.sln
 
 EXTRA_DIST = \

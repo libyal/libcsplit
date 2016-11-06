@@ -26,7 +26,6 @@
 #include <types.h>
 
 #include "libcsplit_extern.h"
-#include "libcsplit_libcerror.h"
 
 #if defined( __cplusplus )
 extern "C" {
@@ -44,5 +43,5 @@ const char *libcsplit_get_version(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCSPLIT_SUPPORT_H ) */
 
