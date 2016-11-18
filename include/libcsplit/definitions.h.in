@@ -24,11 +24,11 @@
 
 #include <libcsplit/types.h>
 
-#define LIBCSPLIT_VERSION			@VERSION@
+#define LIBCSPLIT_VERSION		@VERSION@
 
 /* The version string
  */
-#define LIBCSPLIT_VERSION_STRING		"@VERSION@"
+#define LIBCSPLIT_VERSION_STRING	"@VERSION@"
 
 #endif /* !defined( _LIBCSPLIT_DEFINITIONS_H ) */
 
