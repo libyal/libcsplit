@@ -38,9 +38,9 @@
 #include <libcsplit/extern.h>
 
 #else
-#define LIBCSPLIT_EXTERN	extern
+#define LIBCSPLIT_EXTERN	/* extern */
 
-#endif
+#endif /* !defined( HAVE_LOCAL_LIBCSPLIT ) */
 
 #endif /* !defined( _LIBCSPLIT_INTERNAL_EXTERN_H ) */
 
