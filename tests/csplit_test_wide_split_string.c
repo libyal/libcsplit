@@ -33,17 +33,11 @@
 #include "csplit_test_memory.h"
 #include "csplit_test_unused.h"
 
+#include "../libcsplit/libcsplit_wide_split_string.h"
+
 #if defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE )
 
 #if defined( __GNUC__ )
-
-extern \
-int libcsplit_wide_split_string_initialize(
-     libcsplit_wide_split_string_t **split_string,
-     const char *string,
-     size_t string_size,
-     int number_of_segments,
-     libcerror_error_t **error );
 
 /* Tests the libcsplit_wide_split_string_initialize function
  * Returns 1 if successful or 0 if not
@@ -51,15 +45,21 @@ int libcsplit_wide_split_string_initialize(
 int csplit_test_wide_split_string_initialize(
      void )
 {
-	libcsplit_wide_split_string_t *wide_split_string = NULL;
 	libcerror_error_t *error                         = NULL;
+	libcsplit_wide_split_string_t *wide_split_string = NULL;
 	int result                                       = 0;
+
+#if defined( HAVE_CSPLIT_TEST_MEMORY )
+	int number_of_malloc_fail_tests                  = 4;
+	int number_of_memset_fail_tests                  = 4;
+	int test_number                                  = 0;
+#endif
 
 	/* Test libcsplit_wide_split_string_initialize
 	 */
 	result = libcsplit_wide_split_string_initialize(
 	          &wide_split_string,
-	          "Test",
+	          L"Test",
 	          4,
 	          1,
 	          &error );
@@ -98,7 +98,7 @@ int csplit_test_wide_split_string_initialize(
 	 */
 	result = libcsplit_wide_split_string_initialize(
 	          NULL,
-	          "Test",
+	          L"Test",
 	          4,
 	          1,
 	          &error );
@@ -119,7 +119,7 @@ int csplit_test_wide_split_string_initialize(
 
 	result = libcsplit_wide_split_string_initialize(
 	          &wide_split_string,
-	          "Test",
+	          L"Test",
 	          4,
 	          1,
 	          &error );
@@ -138,73 +138,101 @@ int csplit_test_wide_split_string_initialize(
 
 	wide_split_string = NULL;
 
+	result = libcsplit_wide_split_string_initialize(
+	          &wide_split_string,
+	          L"Test",
+	          4,
+	          -1,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
+
 #if defined( HAVE_CSPLIT_TEST_MEMORY )
-
-	/* Test libcsplit_wide_split_string_initialize with malloc failing
-	 */
-	csplit_test_malloc_attempts_before_fail = 0;
-
-	result = libcsplit_wide_split_string_initialize(
-	          &wide_split_string,
-	          "Test",
-	          4,
-	          1,
-	          &error );
-
-	if( csplit_test_malloc_attempts_before_fail != -1 )
+	for( test_number = 0;
+	     test_number < number_of_malloc_fail_tests;
+	     test_number++ )
 	{
-		csplit_test_malloc_attempts_before_fail = -1;
+		/* Test libcsplit_wide_split_string_initialize with malloc failing
+		 */
+		csplit_test_malloc_attempts_before_fail = test_number;
+
+		result = libcsplit_wide_split_string_initialize(
+		          &wide_split_string,
+		          L"Test",
+		          4,
+		          1,
+		          &error );
+
+		if( csplit_test_malloc_attempts_before_fail != -1 )
+		{
+			csplit_test_malloc_attempts_before_fail = -1;
+		}
+		else
+		{
+			CSPLIT_TEST_ASSERT_EQUAL_INT(
+			 "result",
+			 result,
+			 -1 );
+
+			CSPLIT_TEST_ASSERT_IS_NULL(
+			 "wide_split_string",
+			 wide_split_string );
+
+			CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+			 "error",
+			 error );
+
+			libcerror_error_free(
+			 &error );
+		}
 	}
-	else
+	for( test_number = 0;
+	     test_number < number_of_memset_fail_tests;
+	     test_number++ )
 	{
-		CSPLIT_TEST_ASSERT_EQUAL_INT(
-		 "result",
-		 result,
-		 -1 );
+		/* Test libcsplit_wide_split_string_initialize with memset failing
+		 */
+		csplit_test_memset_attempts_before_fail = 0;
 
-		CSPLIT_TEST_ASSERT_IS_NULL(
-		 "wide_split_string",
-		 wide_split_string );
+		result = libcsplit_wide_split_string_initialize(
+		          &wide_split_string,
+		          L"Test",
+		          4,
+		          1,
+		          &error );
 
-		CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-		 "error",
-		 error );
+		if( csplit_test_memset_attempts_before_fail != -1 )
+		{
+			csplit_test_memset_attempts_before_fail = -1;
+		}
+		else
+		{
+			CSPLIT_TEST_ASSERT_EQUAL_INT(
+			 "result",
+			 result,
+			 -1 );
 
-		libcerror_error_free(
-		 &error );
-	}
-	/* Test libcsplit_wide_split_string_initialize with memset failing
-	 */
-	csplit_test_memset_attempts_before_fail = 0;
+			CSPLIT_TEST_ASSERT_IS_NULL(
+			 "wide_split_string",
+			 wide_split_string );
 
-	result = libcsplit_wide_split_string_initialize(
-	          &wide_split_string,
-	          "Test",
-	          4,
-	          1,
-	          &error );
+			CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+			 "error",
+			 error );
 
-	if( csplit_test_memset_attempts_before_fail != -1 )
-	{
-		csplit_test_memset_attempts_before_fail = -1;
-	}
-	else
-	{
-		CSPLIT_TEST_ASSERT_EQUAL_INT(
-		 "result",
-		 result,
-		 -1 );
-
-		CSPLIT_TEST_ASSERT_IS_NULL(
-		 "wide_split_string",
-		 wide_split_string );
-
-		CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-		 "error",
-		 error );
-
-		libcerror_error_free(
-		 &error );
+			libcerror_error_free(
+			 &error );
+		}
 	}
 #endif /* defined( HAVE_CSPLIT_TEST_MEMORY ) */
 
