@@ -51,7 +51,8 @@ int csplit_test_wide_split_string_initialize(
 
 #if defined( HAVE_CSPLIT_TEST_MEMORY )
 	int number_of_malloc_fail_tests                  = 4;
-	int number_of_memset_fail_tests                  = 4;
+	int number_of_memcpy_fail_tests                  = 1;
+	int number_of_memset_fail_tests                  = 3;
 	int test_number                                  = 0;
 #endif
 
@@ -197,12 +198,50 @@ int csplit_test_wide_split_string_initialize(
 		}
 	}
 	for( test_number = 0;
+	     test_number < number_of_memcpy_fail_tests;
+	     test_number++ )
+	{
+		/* Test libcsplit_wide_split_string_initialize with memcpy failing
+		 */
+		csplit_test_memcpy_attempts_before_fail = test_number;
+
+		result = libcsplit_wide_split_string_initialize(
+		          &wide_split_string,
+		          L"Test",
+		          4,
+		          1,
+		          &error );
+
+		if( csplit_test_memcpy_attempts_before_fail != -1 )
+		{
+			csplit_test_memcpy_attempts_before_fail = -1;
+		}
+		else
+		{
+			CSPLIT_TEST_ASSERT_EQUAL_INT(
+			 "result",
+			 result,
+			 -1 );
+
+			CSPLIT_TEST_ASSERT_IS_NULL(
+			 "wide_split_string",
+			 wide_split_string );
+
+			CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+			 "error",
+			 error );
+
+			libcerror_error_free(
+			 &error );
+		}
+	}
+	for( test_number = 0;
 	     test_number < number_of_memset_fail_tests;
 	     test_number++ )
 	{
 		/* Test libcsplit_wide_split_string_initialize with memset failing
 		 */
-		csplit_test_memset_attempts_before_fail = 0;
+		csplit_test_memset_attempts_before_fail = test_number;
 
 		result = libcsplit_wide_split_string_initialize(
 		          &wide_split_string,
