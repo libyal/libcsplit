@@ -45,7 +45,7 @@ int csplit_test_narrow_string_split(
 	/* Test regular cases
 	 */
 	result = libcsplit_narrow_string_split(
-	          "1 2 3 4 5",
+	          "1 2 3 4  5",
 	          10,
 	          ' ',
 	          &split_string,
@@ -59,6 +59,45 @@ int csplit_test_narrow_string_split(
         CSPLIT_TEST_ASSERT_IS_NULL(
          "error",
          error );
+
+/* TODO check number of segments */
+
+	result = libcsplit_narrow_split_string_free(
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "split_string",
+         split_string );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	/* Test string that does not need splitting
+	 */
+	result = libcsplit_narrow_string_split(
+	          "1 2 3 4  5",
+	          10,
+	          '\n',
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+/* TODO check number of segments */
 
 	result = libcsplit_narrow_split_string_free(
 	          &split_string,
@@ -95,6 +134,8 @@ int csplit_test_narrow_string_split(
          "error",
          error );
 
+/* TODO check number of segments */
+
 	result = libcsplit_narrow_split_string_free(
 	          &split_string,
 	          &error );
@@ -113,7 +154,7 @@ int csplit_test_narrow_string_split(
          error );
 
 	result = libcsplit_narrow_string_split(
-	          "1 2 3 4 5",
+	          "1 2 3 4  5",
 	          0,
 	          ' ',
 	          &split_string,
@@ -127,6 +168,8 @@ int csplit_test_narrow_string_split(
         CSPLIT_TEST_ASSERT_IS_NULL(
          "error",
          error );
+
+/* TODO check number of segments */
 
 	result = libcsplit_narrow_split_string_free(
 	          &split_string,
@@ -169,7 +212,7 @@ int csplit_test_narrow_string_split(
 	split_string = (libcsplit_narrow_split_string_t *) 0x12345678UL;
 
 	result = libcsplit_narrow_string_split(
-	          split_string,
+	          "1 2 3 4  5",
 	          10,
 	          ' ',
 	          &split_string,
@@ -190,7 +233,7 @@ int csplit_test_narrow_string_split(
 	split_string = NULL;
 
 	result = libcsplit_narrow_string_split(
-	          "1 2 3 4 5",
+	          "1 2 3 4  5",
 	          (size_t) SSIZE_MAX + 1,
 	          ' ',
 	          &split_string,
@@ -209,7 +252,7 @@ int csplit_test_narrow_string_split(
 	 &error );
 
 	result = libcsplit_narrow_string_split(
-	          "1 2 3 4 5",
+	          "1 2 3 4  5",
 	          10,
 	          ' ',
 	          NULL,
@@ -226,6 +269,8 @@ int csplit_test_narrow_string_split(
 
 	libcerror_error_free(
 	 &error );
+
+/* TODO test libcsplit_narrow_split_string_initialize (malloc) failure */
 
 	return( 1 );
 

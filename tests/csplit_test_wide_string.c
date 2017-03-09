@@ -47,9 +47,44 @@ int csplit_test_wide_string_split(
 	/* Test regular cases
 	 */
 	result = libcsplit_wide_string_split(
-	          L"1 2 3 4 5",
+	          L"1 2 3 4  5",
 	          10,
-	          ' ',
+	          (wchar_t) ' ',
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libcsplit_wide_split_string_free(
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "split_string",
+         split_string );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	/* Test string that does not need splitting
+	 */
+	result = libcsplit_wide_string_split(
+	          L"1 2 3 4  5",
+	          10,
+	          (wchar_t) '\n',
 	          &split_string,
 	          &error );
 
@@ -84,7 +119,7 @@ int csplit_test_wide_string_split(
 	result = libcsplit_wide_string_split(
 	          L"",
 	          1,
-	          ' ',
+	          (wchar_t) ' ',
 	          &split_string,
 	          &error );
 
@@ -115,9 +150,9 @@ int csplit_test_wide_string_split(
          error );
 
 	result = libcsplit_wide_string_split(
-	          L"1 2 3 4 5",
+	          L"1 2 3 4  5",
 	          0,
-	          ' ',
+	          (wchar_t) ' ',
 	          &split_string,
 	          &error );
 
@@ -171,9 +206,9 @@ int csplit_test_wide_string_split(
 	split_string = (libcsplit_wide_split_string_t *) 0x12345678UL;
 
 	result = libcsplit_wide_string_split(
-	          split_string,
+	          L"1 2 3 4  5",
 	          10,
-	          ' ',
+	          (wchar_t) ' ',
 	          &split_string,
 	          &error );
 
@@ -192,7 +227,7 @@ int csplit_test_wide_string_split(
 	split_string = NULL;
 
 	result = libcsplit_wide_string_split(
-	          L"1 2 3 4 5",
+	          L"1 2 3 4  5",
 	          (size_t) SSIZE_MAX + 1,
 	          (wchar_t) ' ',
 	          &split_string,
@@ -211,7 +246,7 @@ int csplit_test_wide_string_split(
 	 &error );
 
 	result = libcsplit_wide_string_split(
-	          L"1 2 3 4 5",
+	          L"1 2 3 4  5",
 	          10,
 	          (wchar_t) ' ',
 	          NULL,
