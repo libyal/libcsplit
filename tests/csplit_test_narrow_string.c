@@ -42,6 +42,109 @@ int csplit_test_narrow_string_split(
 	libcsplit_narrow_split_string_t *split_string = NULL;
 	int result                                    = 0;
 
+	/* Test regular cases
+	 */
+	result = libcsplit_narrow_string_split(
+	          "1 2 3 4 5",
+	          10,
+	          ' ',
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libcsplit_narrow_split_string_free(
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "split_string",
+         split_string );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	/* Test empty string
+	 */
+	result = libcsplit_narrow_string_split(
+	          "",
+	          1,
+	          ' ',
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libcsplit_narrow_split_string_free(
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "split_string",
+         split_string );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libcsplit_narrow_string_split(
+	          "1 2 3 4 5",
+	          0,
+	          ' ',
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
+	result = libcsplit_narrow_split_string_free(
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 1 );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "split_string",
+         split_string );
+
+        CSPLIT_TEST_ASSERT_IS_NULL(
+         "error",
+         error );
+
 	/* Test error cases
 	 */
 	result = libcsplit_narrow_string_split(
@@ -62,6 +165,29 @@ int csplit_test_narrow_string_split(
 
 	libcerror_error_free(
 	 &error );
+
+	split_string = (libcsplit_narrow_split_string_t *) 0x12345678UL;
+
+	result = libcsplit_narrow_string_split(
+	          split_string,
+	          10,
+	          ' ',
+	          &split_string,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+         "error",
+         error );
+
+	libcerror_error_free(
+	 &error );
+
+	split_string = NULL;
 
 	result = libcsplit_narrow_string_split(
 	          "1 2 3 4 5",
