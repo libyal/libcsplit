@@ -113,7 +113,6 @@ stamp-h[1-9]
 /common/config.h.in
 /common/types.h
 /dpkg/changelog
-/dpkg/copyright
 /include/libcsplit.h
 /include/libcsplit/definitions.h
 /include/libcsplit/features.h

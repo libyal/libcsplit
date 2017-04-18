@@ -16,10 +16,9 @@ DPKG_FILES = \
 	dpkg/compat \
 	dpkg/control \
 	dpkg/copyright \
-	dpkg/copyright.in \
 	dpkg/rules \
-	dpkg/libcsplit-dev.docs \
-	dpkg/libcsplit.docs \
+	dpkg/libcsplit-dev.install \
+	dpkg/libcsplit.install \
 	dpkg/source/format
 
 GETTEXT_FILES = \
