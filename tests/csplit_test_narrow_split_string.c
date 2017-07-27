@@ -35,7 +35,7 @@
 
 #include "../libcsplit/libcsplit_narrow_split_string.h"
 
-#if defined( __GNUC__ )
+#if defined( __GNUC__ ) && !defined( LIBCSPLIT_DLL_IMPORT )
 
 /* Tests the libcsplit_narrow_split_string_initialize function
  * Returns 1 if successful or 0 if not
@@ -290,7 +290,7 @@ on_error:
 	return( 0 );
 }
 
-#endif /* defined( __GNUC__ ) */
+#endif /* defined( __GNUC__ ) && !defined( LIBCSPLIT_DLL_IMPORT ) */
 
 /* Tests the libcsplit_narrow_split_string_free function
  * Returns 1 if successful or 0 if not
@@ -783,7 +783,7 @@ on_error:
 	return( 0 );
 }
 
-#if defined( __GNUC__ )
+#if defined( __GNUC__ ) && !defined( LIBCSPLIT_DLL_IMPORT )
 
 /* Tests the libcsplit_narrow_split_string_set_segment_by_index function
  * Returns 1 if successful or 0 if not
@@ -1032,7 +1032,7 @@ on_error:
 	return( 0 );
 }
 
-#endif /* defined( __GNUC__ ) */
+#endif /* defined( __GNUC__ ) && !defined( LIBCSPLIT_DLL_IMPORT ) */
 
 /* The main program
  */
@@ -1049,13 +1049,13 @@ int main(
 	CSPLIT_TEST_UNREFERENCED_PARAMETER( argc )
 	CSPLIT_TEST_UNREFERENCED_PARAMETER( argv )
 
-#if defined( __GNUC__ )
+#if defined( __GNUC__ ) && !defined( LIBCSPLIT_DLL_IMPORT )
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_narrow_split_string_initialize",
 	 csplit_test_narrow_split_string_initialize );
 
-#endif /* defined( __GNUC__ ) */
+#endif /* defined( __GNUC__ ) && !defined( LIBCSPLIT_DLL_IMPORT ) */
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_narrow_split_string_free",
@@ -1073,13 +1073,13 @@ int main(
 	 "libcsplit_narrow_split_string_get_segment_by_index",
 	 csplit_test_narrow_split_string_get_segment_by_index );
 
-#if defined( __GNUC__ )
+#if defined( __GNUC__ ) && !defined( LIBCSPLIT_DLL_IMPORT )
 
 	CSPLIT_TEST_RUN(
 	 "libcsplit_narrow_split_string_set_segment_by_index",
 	 csplit_test_narrow_split_string_set_segment_by_index );
 
-#endif /* defined( __GNUC__ ) */
+#endif /* defined( __GNUC__ ) && !defined( LIBCSPLIT_DLL_IMPORT ) */
 
 	return( EXIT_SUCCESS );
 
