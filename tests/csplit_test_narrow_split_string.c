@@ -68,13 +68,13 @@ int csplit_test_narrow_split_string_initialize(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	result = libcsplit_narrow_split_string_free(
 	          &split_string,
@@ -85,13 +85,13 @@ int csplit_test_narrow_split_string_initialize(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test error cases
 	 */
@@ -107,9 +107,9 @@ int csplit_test_narrow_split_string_initialize(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -128,9 +128,9 @@ int csplit_test_narrow_split_string_initialize(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -149,9 +149,9 @@ int csplit_test_narrow_split_string_initialize(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -312,9 +312,9 @@ int csplit_test_narrow_split_string_free(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -356,13 +356,13 @@ int csplit_test_narrow_split_string_get_string(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test regular cases
 	 */
@@ -377,13 +377,13 @@ int csplit_test_narrow_split_string_get_string(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "string",
-         string );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "string",
+	 string );
 
 	CSPLIT_TEST_ASSERT_EQUAL_SIZE(
 	 "string_size",
@@ -403,9 +403,9 @@ int csplit_test_narrow_split_string_get_string(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -421,9 +421,9 @@ int csplit_test_narrow_split_string_get_string(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -439,9 +439,9 @@ int csplit_test_narrow_split_string_get_string(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -457,13 +457,13 @@ int csplit_test_narrow_split_string_get_string(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	return( 1 );
 
@@ -507,13 +507,13 @@ int csplit_test_narrow_split_string_get_number_of_segments(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test regular cases
 	 */
@@ -527,9 +527,9 @@ int csplit_test_narrow_split_string_get_number_of_segments(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	CSPLIT_TEST_ASSERT_EQUAL_INT(
 	 "number_of_segments",
@@ -548,9 +548,9 @@ int csplit_test_narrow_split_string_get_number_of_segments(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -565,9 +565,9 @@ int csplit_test_narrow_split_string_get_number_of_segments(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -583,13 +583,13 @@ int csplit_test_narrow_split_string_get_number_of_segments(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	return( 1 );
 
@@ -634,13 +634,13 @@ int csplit_test_narrow_split_string_get_segment_by_index(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test regular cases
 	 */
@@ -656,13 +656,13 @@ int csplit_test_narrow_split_string_get_segment_by_index(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "string_segment",
-         string_segment );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "string_segment",
+	 string_segment );
 
 	CSPLIT_TEST_ASSERT_EQUAL_SIZE(
 	 "string_segment_size",
@@ -683,9 +683,9 @@ int csplit_test_narrow_split_string_get_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -702,9 +702,9 @@ int csplit_test_narrow_split_string_get_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -721,9 +721,9 @@ int csplit_test_narrow_split_string_get_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -740,9 +740,9 @@ int csplit_test_narrow_split_string_get_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -758,13 +758,13 @@ int csplit_test_narrow_split_string_get_segment_by_index(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	return( 1 );
 
@@ -811,13 +811,13 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	result = libcsplit_narrow_split_string_get_string(
 	          split_string,
@@ -830,13 +830,13 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "string",
-         string );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "string",
+	 string );
 
 	CSPLIT_TEST_ASSERT_EQUAL_SIZE(
 	 "string_size",
@@ -857,9 +857,9 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	/* Test error cases
 	 */
@@ -875,9 +875,9 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -894,9 +894,9 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -913,9 +913,9 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -932,9 +932,9 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -951,9 +951,9 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -970,9 +970,9 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -989,9 +989,9 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 -1 );
 
-        CSPLIT_TEST_ASSERT_IS_NOT_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
 
 	libcerror_error_free(
 	 &error );
@@ -1007,13 +1007,13 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 result,
 	 1 );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "split_string",
-         split_string );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "split_string",
+	 split_string );
 
-        CSPLIT_TEST_ASSERT_IS_NULL(
-         "error",
-         error );
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "error",
+	 error );
 
 	return( 1 );
 
