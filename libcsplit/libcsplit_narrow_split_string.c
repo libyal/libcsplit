@@ -514,7 +514,7 @@ int libcsplit_narrow_split_string_set_segment_by_index(
 		}
 		string_segment_offset = (size_t) ( string_segment - internal_split_string->string );
 
-		if( string_segment_offset > internal_split_string->string_size )
+		if( string_segment_offset >= internal_split_string->string_size )
 		{
 			libcerror_error_set(
 			 error,

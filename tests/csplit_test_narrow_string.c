@@ -30,6 +30,7 @@
 #include "csplit_test_libcerror.h"
 #include "csplit_test_libcsplit.h"
 #include "csplit_test_macros.h"
+#include "csplit_test_memory.h"
 #include "csplit_test_unused.h"
 
 /* Tests the libcsplit_narrow_string_split function
@@ -55,6 +56,10 @@ int csplit_test_narrow_string_split(
 	 "result",
 	 result,
 	 1 );
+
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "split_string",
+	 split_string );
 
 	CSPLIT_TEST_ASSERT_IS_NULL(
 	 "error",
@@ -92,6 +97,10 @@ int csplit_test_narrow_string_split(
 	 "result",
 	 result,
 	 1 );
+
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "split_string",
+	 split_string );
 
 	CSPLIT_TEST_ASSERT_IS_NULL(
 	 "error",
@@ -131,21 +140,6 @@ int csplit_test_narrow_string_split(
 	 1 );
 
 	CSPLIT_TEST_ASSERT_IS_NULL(
-	 "error",
-	 error );
-
-/* TODO check number of segments */
-
-	result = libcsplit_narrow_split_string_free(
-	          &split_string,
-	          &error );
-
-	CSPLIT_TEST_ASSERT_EQUAL_INT(
-	 "result",
-	 result,
-	 1 );
-
-	CSPLIT_TEST_ASSERT_IS_NULL(
 	 "split_string",
 	 split_string );
 
@@ -157,21 +151,6 @@ int csplit_test_narrow_string_split(
 	          "1 2 3 4  5",
 	          0,
 	          ' ',
-	          &split_string,
-	          &error );
-
-	CSPLIT_TEST_ASSERT_EQUAL_INT(
-	 "result",
-	 result,
-	 1 );
-
-	CSPLIT_TEST_ASSERT_IS_NULL(
-	 "error",
-	 error );
-
-/* TODO check number of segments */
-
-	result = libcsplit_narrow_split_string_free(
 	          &split_string,
 	          &error );
 
@@ -201,6 +180,10 @@ int csplit_test_narrow_string_split(
 	 "result",
 	 result,
 	 -1 );
+
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "split_string",
+	 split_string );
 
 	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
 	 "error",
@@ -244,6 +227,10 @@ int csplit_test_narrow_string_split(
 	 result,
 	 -1 );
 
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "split_string",
+	 split_string );
+
 	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
 	 "error",
 	 error );
@@ -263,6 +250,10 @@ int csplit_test_narrow_string_split(
 	 result,
 	 -1 );
 
+	CSPLIT_TEST_ASSERT_IS_NULL(
+	 "split_string",
+	 split_string );
+
 	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
 	 "error",
 	 error );
@@ -270,7 +261,49 @@ int csplit_test_narrow_string_split(
 	libcerror_error_free(
 	 &error );
 
-/* TODO test libcsplit_narrow_split_string_initialize (malloc) failure */
+#if defined( HAVE_CSPLIT_TEST_MEMORY )
+
+	/* Test csplit_test_narrow_string_split with malloc failing in libcsplit_narrow_split_string_initialize
+	 */
+	csplit_test_malloc_attempts_before_fail = 0;
+
+	result = libcsplit_narrow_string_split(
+	          "1 2 3 4  5",
+	          10,
+	          ' ',
+	          &split_string,
+	          &error );
+
+	if( csplit_test_malloc_attempts_before_fail != -1 )
+	{
+		csplit_test_malloc_attempts_before_fail = -1;
+
+		if( split_string != NULL )
+		{
+			libcsplit_narrow_split_string_free(
+			 &split_string,
+			 NULL );
+		}
+	}
+	else
+	{
+		CSPLIT_TEST_ASSERT_EQUAL_INT(
+		 "result",
+		 result,
+		 -1 );
+
+		CSPLIT_TEST_ASSERT_IS_NULL(
+		 "split_string",
+		 split_string );
+
+		CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+		 "error",
+		 error );
+
+		libcerror_error_free(
+		 &error );
+	}
+#endif /* defined( HAVE_CSPLIT_TEST_MEMORY ) */
 
 	return( 1 );
 

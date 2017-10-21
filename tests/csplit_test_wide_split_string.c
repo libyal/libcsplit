@@ -803,7 +803,7 @@ int csplit_test_wide_split_string_set_segment_by_index(
 	 */
 	result = libcsplit_wide_split_string_initialize(
 	          &split_string,
-	          L"Test",
+	          L"TestTest",
 	          4,
 	          1,
 	          &error );
@@ -984,6 +984,25 @@ int csplit_test_wide_split_string_set_segment_by_index(
 	          0,
 	          string,
 	          (size_t) SSIZE_MAX + 1,
+	          &error );
+
+	CSPLIT_TEST_ASSERT_EQUAL_INT(
+	 "result",
+	 result,
+	 -1 );
+
+	CSPLIT_TEST_ASSERT_IS_NOT_NULL(
+	 "error",
+	 error );
+
+	libcerror_error_free(
+	 &error );
+
+	result = libcsplit_wide_split_string_set_segment_by_index(
+	          split_string,
+	          0,
+	          &( string[ 4 ] ),
+	          4,
 	          &error );
 
 	CSPLIT_TEST_ASSERT_EQUAL_INT(
