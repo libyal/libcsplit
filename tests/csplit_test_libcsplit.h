@@ -1,5 +1,5 @@
 /*
- * The internal libcsplit header
+ * The libcsplit header wrapper
  *
  * Copyright (C) 2008-2018, Joachim Metz <joachim.metz@gmail.com>
  *
