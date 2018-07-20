@@ -37,8 +37,11 @@
 
 #include <libcsplit/extern.h>
 
+#define LIBCSPLIT_EXTERN_VARIABLE	LIBCSPLIT_EXTERN
+
 #else
-#define LIBCSPLIT_EXTERN	/* extern */
+#define LIBCSPLIT_EXTERN		/* extern */
+#define LIBCSPLIT_EXTERN_VARIABLE	extern
 
 #endif /* !defined( HAVE_LOCAL_LIBCSPLIT ) */
 
