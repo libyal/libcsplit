@@ -28,13 +28,6 @@
  */
 #if !defined( HAVE_LOCAL_LIBCSPLIT )
 
-/* If libtool DLL support is enabled set LIBCSPLIT_DLL_EXPORT
- * before including libcsplit/extern.h
- */
-#if defined( _WIN32 ) && defined( DLL_EXPORT )
-#define LIBCSPLIT_DLL_EXPORT
-#endif
-
 #include <libcsplit/extern.h>
 
 #define LIBCSPLIT_EXTERN_VARIABLE	LIBCSPLIT_EXTERN
