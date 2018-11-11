@@ -10,15 +10,15 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 @libcsplit_spec_requires@ @ax_libcerror_spec_requires@
 BuildRequires: gcc @ax_libcerror_spec_build_requires@
 
-%description
+%description -n libcsplit
 Library to support cross-platform C split string functions
 
-%package devel
+%package -n libcsplit-devel
 Summary: Header files and libraries for developing applications for libcsplit
 Group: Development/Libraries
 Requires: libcsplit = %{version}-%{release}
 
-%description devel
+%description -n libcsplit-devel
 Header files and libraries for developing applications for libcsplit.
 
 %prep
@@ -39,13 +39,13 @@ rm -rf %{buildroot}
 
 %postun -p /sbin/ldconfig
 
-%files
+%files -n libcsplit
 %defattr(644,root,root,755)
 %license COPYING
 %doc AUTHORS README
 %attr(755,root,root) %{_libdir}/*.so.*
 
-%files devel
+%files -n libcsplit-devel
 %defattr(644,root,root,755)
 %license COPYING
 %doc AUTHORS README ChangeLog
