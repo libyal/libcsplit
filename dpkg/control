@@ -9,6 +9,8 @@ Homepage: https://github.com/libyal/libcsplit
 Package: libcsplit
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libcsplit1
+Replaces: libcsplit1
 Suggests: libcsplit-dbg
 Description: Library to support cross-platform C split string functions
  libcsplit is a library to support cross-platform C split string functions.
