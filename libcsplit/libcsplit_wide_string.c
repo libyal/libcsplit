@@ -158,7 +158,7 @@ int libcsplit_wide_string_split(
 		 error,
 		 LIBCERROR_ERROR_DOMAIN_RUNTIME,
 		 LIBCERROR_RUNTIME_ERROR_INITIALIZE_FAILED,
-		 "%s: unable to intialize split string.",
+		 "%s: unable to initialize split string.",
 		 function );
 
 		goto on_error;
