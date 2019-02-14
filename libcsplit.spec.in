@@ -13,6 +13,14 @@ BuildRequires: gcc @ax_libcerror_spec_build_requires@
 %description -n libcsplit
 Library to support cross-platform C split string functions
 
+%package -n libcsplit-static
+Summary: Library to support cross-platform C split string functions
+Group: Development/Libraries
+Requires: libcsplit = %{version}-%{release}
+
+%description -n libcsplit-static
+Static library version of libcsplit.
+
 %package -n libcsplit-devel
 Summary: Header files and libraries for developing applications for libcsplit
 Group: Development/Libraries
@@ -45,11 +53,16 @@ rm -rf %{buildroot}
 %doc AUTHORS README
 %attr(755,root,root) %{_libdir}/*.so.*
 
+%files -n libcsplit-static
+%defattr(644,root,root,755)
+%license COPYING
+%doc AUTHORS README
+%attr(755,root,root) %{_libdir}/*.a
+
 %files -n libcsplit-devel
 %defattr(644,root,root,755)
 %license COPYING
 %doc AUTHORS README
-%{_libdir}/*.a
 %{_libdir}/*.la
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/libcsplit.pc
