@@ -1,11 +1,9 @@
-.Dd January  9, 2017
+.Dd March 15, 2019
 .Dt libcsplit 3
 .Os libcsplit
 .Sh NAME
 .Nm libcsplit.h
 .Nd Library to support cross-platform C split string functions
-.Sh LIBRARY
-.Lb libcsplit
 .Sh SYNOPSIS
 .In libcsplit.h
 .Pp
@@ -17,45 +15,45 @@ Error functions
 .Ft void
 .Fn libcsplit_error_free "libcsplit_error_t **error"
 .Ft int
-.Fn libcsplit_error_fprint "libcsplit_error_t *error, FILE *stream"
+.Fn libcsplit_error_fprint "libcsplit_error_t *error" "FILE *stream"
 .Ft int
-.Fn libcsplit_error_sprint "libcsplit_error_t *error, char *string, size_t size"
+.Fn libcsplit_error_sprint "libcsplit_error_t *error" "char *string" "size_t size"
 .Ft int
-.Fn libcsplit_error_backtrace_fprint "libcsplit_error_t *error, FILE *stream"
+.Fn libcsplit_error_backtrace_fprint "libcsplit_error_t *error" "FILE *stream"
 .Ft int
-.Fn libcsplit_error_backtrace_sprint "libcsplit_error_t *error, char *string, size_t size"
+.Fn libcsplit_error_backtrace_sprint "libcsplit_error_t *error" "char *string" "size_t size"
 .Pp
 Narrow string functions
 .Ft int
-.Fn libcsplit_narrow_string_split "const char *string, size_t string_size, char delimiter, libcsplit_narrow_split_string_t **split_string, libcsplit_error_t **error"
+.Fn libcsplit_narrow_string_split "const char *string" "size_t string_size" "char delimiter" "libcsplit_narrow_split_string_t **split_string" "libcsplit_error_t **error"
 .Pp
 Narrow split string functions
 .Ft int
-.Fn libcsplit_narrow_split_string_free "libcsplit_narrow_split_string_t **split_string, libcsplit_error_t **error"
+.Fn libcsplit_narrow_split_string_free "libcsplit_narrow_split_string_t **split_string" "libcsplit_error_t **error"
 .Ft int
-.Fn libcsplit_narrow_split_string_get_string "libcsplit_narrow_split_string_t *split_string, char **string, size_t *string_size, libcsplit_error_t **error"
+.Fn libcsplit_narrow_split_string_get_string "libcsplit_narrow_split_string_t *split_string" "char **string" "size_t *string_size" "libcsplit_error_t **error"
 .Ft int
-.Fn libcsplit_narrow_split_string_get_number_of_segments "libcsplit_narrow_split_string_t *split_string, int *number_of_segments, libcsplit_error_t **error"
+.Fn libcsplit_narrow_split_string_get_number_of_segments "libcsplit_narrow_split_string_t *split_string" "int *number_of_segments" "libcsplit_error_t **error"
 .Ft int
-.Fn libcsplit_narrow_split_string_get_segment_by_index "libcsplit_narrow_split_string_t *split_string, int segment_index, char **string_segment, size_t *string_segment_size, libcsplit_error_t **error"
+.Fn libcsplit_narrow_split_string_get_segment_by_index "libcsplit_narrow_split_string_t *split_string" "int segment_index" "char **string_segment" "size_t *string_segment_size" "libcsplit_error_t **error"
 .Ft int
-.Fn libcsplit_narrow_split_string_set_segment_by_index "libcsplit_narrow_split_string_t *split_string, int segment_index, char *string_segment, size_t string_segment_size, libcsplit_error_t **error"
+.Fn libcsplit_narrow_split_string_set_segment_by_index "libcsplit_narrow_split_string_t *split_string" "int segment_index" "char *string_segment" "size_t string_segment_size" "libcsplit_error_t **error"
 .Pp
 Wide string functions
 .Ft int
-.Fn libcsplit_wide_string_split "const wchar_t *string, size_t string_size, wchar_t delimiter, libcsplit_wide_split_string_t **split_string, libcsplit_error_t **error"
+.Fn libcsplit_wide_string_split "const wchar_t *string" "size_t string_size" "wchar_t delimiter" "libcsplit_wide_split_string_t **split_string" "libcsplit_error_t **error"
 .Pp
 Wide split string functions
 .Ft int
-.Fn libcsplit_wide_split_string_free "libcsplit_wide_split_string_t **split_string, libcsplit_error_t **error"
+.Fn libcsplit_wide_split_string_free "libcsplit_wide_split_string_t **split_string" "libcsplit_error_t **error"
 .Ft int
-.Fn libcsplit_wide_split_string_get_string "libcsplit_wide_split_string_t *split_string, wchar_t **string, size_t *string_size, libcsplit_error_t **error"
+.Fn libcsplit_wide_split_string_get_string "libcsplit_wide_split_string_t *split_string" "wchar_t **string" "size_t *string_size" "libcsplit_error_t **error"
 .Ft int
-.Fn libcsplit_wide_split_string_get_number_of_segments "libcsplit_wide_split_string_t *split_string, int *number_of_segments, libcsplit_error_t **error"
+.Fn libcsplit_wide_split_string_get_number_of_segments "libcsplit_wide_split_string_t *split_string" "int *number_of_segments" "libcsplit_error_t **error"
 .Ft int
-.Fn libcsplit_wide_split_string_get_segment_by_index "libcsplit_wide_split_string_t *split_string, int segment_index, wchar_t **string_segment, size_t *string_segment_size, libcsplit_error_t **error"
+.Fn libcsplit_wide_split_string_get_segment_by_index "libcsplit_wide_split_string_t *split_string" "int segment_index" "wchar_t **string_segment" "size_t *string_segment_size" "libcsplit_error_t **error"
 .Ft int
-.Fn libcsplit_wide_split_string_set_segment_by_index "libcsplit_wide_split_string_t *split_string, int segment_index, wchar_t *string_segment, size_t string_segment_size, libcsplit_error_t **error"
+.Fn libcsplit_wide_split_string_set_segment_by_index "libcsplit_wide_split_string_t *split_string" "int segment_index" "wchar_t *string_segment" "size_t string_segment_size" "libcsplit_error_t **error"
 .Sh DESCRIPTION
 The
 .Fn libcsplit_get_version
@@ -68,8 +66,8 @@ None
 .Sh FILES
 None
 .Sh NOTES
-libcsplit allows to be compiled with wide character support (wchar_t).
-
+libcsplit can be compiled with wide character support (wchar_t).
+.sp
 To compile libcsplit with wide character support use:
 .Ar ./configure --enable-wide-character-type=yes
  or define:
@@ -77,7 +75,7 @@ To compile libcsplit with wide character support use:
  or
 .Ar UNICODE
  during compilation.
-
+.sp
 .Ar LIBCSPLIT_WIDE_CHARACTER_TYPE
  in libcsplit/features.h can be used to determine if libcsplit was compiled with wide character support.
 .Sh BUGS
@@ -86,7 +84,7 @@ Please report bugs of any kind on the project issue tracker: https://github.com/
 These man pages are generated from "libcsplit.h".
 .Sh COPYRIGHT
 Copyright (C) 2008-2019, Joachim Metz <joachim.metz@gmail.com>.
-
+.sp
 This is free software; see the source for copying conditions.
 There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 .Sh SEE ALSO
