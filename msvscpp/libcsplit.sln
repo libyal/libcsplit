@@ -1,6 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcerror", "libcerror\libcerror.vcproj", "{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcsplit", "libcsplit\libcsplit.vcproj", "{BB5526FB-0C7E-457A-B76C-1436981E247C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C} = {BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}
+	EndProjectSection
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "csplit_test_error", "csplit_test_error\csplit_test_error.vcproj", "{2A1F5BAF-565B-4B97-A211-37A4969EBF66}"
 	ProjectSection(ProjectDependencies) = postProject
 		{BB5526FB-0C7E-457A-B76C-1436981E247C} = {BB5526FB-0C7E-457A-B76C-1436981E247C}
@@ -35,19 +42,20 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "csplit_test_wide_split_stri
 		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C} = {BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcerror", "libcerror\libcerror.vcproj", "{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcsplit", "libcsplit\libcsplit.vcproj", "{BB5526FB-0C7E-457A-B76C-1436981E247C}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C} = {BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|Win32 = Release|Win32
 		VSDebug|Win32 = VSDebug|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}.Release|Win32.ActiveCfg = Release|Win32
+		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}.Release|Win32.Build.0 = Release|Win32
+		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}.VSDebug|Win32.ActiveCfg = VSDebug|Win32
+		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}.VSDebug|Win32.Build.0 = VSDebug|Win32
+		{BB5526FB-0C7E-457A-B76C-1436981E247C}.Release|Win32.ActiveCfg = Release|Win32
+		{BB5526FB-0C7E-457A-B76C-1436981E247C}.Release|Win32.Build.0 = Release|Win32
+		{BB5526FB-0C7E-457A-B76C-1436981E247C}.VSDebug|Win32.ActiveCfg = VSDebug|Win32
+		{BB5526FB-0C7E-457A-B76C-1436981E247C}.VSDebug|Win32.Build.0 = VSDebug|Win32
 		{2A1F5BAF-565B-4B97-A211-37A4969EBF66}.Release|Win32.ActiveCfg = Release|Win32
 		{2A1F5BAF-565B-4B97-A211-37A4969EBF66}.Release|Win32.Build.0 = Release|Win32
 		{2A1F5BAF-565B-4B97-A211-37A4969EBF66}.VSDebug|Win32.ActiveCfg = VSDebug|Win32
@@ -72,14 +80,6 @@ Global
 		{EA348EA3-6970-4CBB-8ABD-F4EA6F844B70}.Release|Win32.Build.0 = Release|Win32
 		{EA348EA3-6970-4CBB-8ABD-F4EA6F844B70}.VSDebug|Win32.ActiveCfg = VSDebug|Win32
 		{EA348EA3-6970-4CBB-8ABD-F4EA6F844B70}.VSDebug|Win32.Build.0 = VSDebug|Win32
-		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}.Release|Win32.ActiveCfg = Release|Win32
-		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}.Release|Win32.Build.0 = Release|Win32
-		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}.VSDebug|Win32.ActiveCfg = VSDebug|Win32
-		{BD3A95FA-A3DE-4B79-A889-A7E5ECA4B69C}.VSDebug|Win32.Build.0 = VSDebug|Win32
-		{BB5526FB-0C7E-457A-B76C-1436981E247C}.Release|Win32.ActiveCfg = Release|Win32
-		{BB5526FB-0C7E-457A-B76C-1436981E247C}.Release|Win32.Build.0 = Release|Win32
-		{BB5526FB-0C7E-457A-B76C-1436981E247C}.VSDebug|Win32.ActiveCfg = VSDebug|Win32
-		{BB5526FB-0C7E-457A-B76C-1436981E247C}.VSDebug|Win32.Build.0 = VSDebug|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
