@@ -25,7 +25,7 @@ then
 
 		make install DESTDIR=${PWD}/osx-pkg;
 		mkdir -p ${PWD}/osx-pkg/usr/share/doc/libcsplit;
-		cp AUTHORS COPYING NEWS README ${PWD}/osx-pkg/usr/share/doc/libcsplit;
+		cp AUTHORS COPYING COPYING.LESSER NEWS README ${PWD}/osx-pkg/usr/share/doc/libcsplit;
 
 		pkgbuild --root osx-pkg --identifier com.github.libyal.libcsplit --version ${VERSION} --ownership recommended ../libcsplit-${VERSION}.pkg;
 	fi
