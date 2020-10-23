@@ -30,7 +30,11 @@
 
 #include <libcsplit/extern.h>
 
+#if defined( __CYGWIN__ )
+#define LIBCSPLIT_EXTERN_VARIABLE	extern
+#else
 #define LIBCSPLIT_EXTERN_VARIABLE	LIBCSPLIT_EXTERN
+#endif
 
 #else
 #define LIBCSPLIT_EXTERN		/* extern */
