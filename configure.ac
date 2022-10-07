@@ -2,7 +2,7 @@ AC_PREREQ([2.71])
 
 AC_INIT(
  [libcsplit],
- [20220818],
+ [20221007],
  [joachim.metz@gmail.com])
 
 AC_CONFIG_SRCDIR(
