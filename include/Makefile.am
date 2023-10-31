@@ -18,9 +18,9 @@ MAINTAINERCLEANFILES = \
 	Makefile.in
 
 distclean: clean
-	/bin/rm -f libcsplit.h
-	/bin/rm -f libcsplit/definitions.h
-	/bin/rm -f libcsplit/features.h
-	/bin/rm -f libcsplit/types.h
-	/bin/rm -f Makefile
+	-rm -f libcsplit.h
+	-rm -f libcsplit/definitions.h
+	-rm -f libcsplit/features.h
+	-rm -f libcsplit/types.h
+	-rm -f Makefile
 
