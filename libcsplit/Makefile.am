@@ -1,6 +1,6 @@
 AM_CPPFLAGS = \
-	-I$(top_srcdir)/include \
-	-I$(top_srcdir)/common \
+	-I../include -I$(top_srcdir)/include \
+	-I../common -I$(top_srcdir)/common \
 	@LIBCERROR_CPPFLAGS@ \
 	@LIBCSPLIT_DLL_EXPORT@
 
@@ -30,13 +30,11 @@ EXTRA_DIST = \
 	libcsplit.rc \
 	libcsplit.rc.in
 
-MAINTAINERCLEANFILES = \
+DISTCLEANFILES = \
+	libcsplit_definitions.h \
+	libcsplit.rc \
+	Makefile \
 	Makefile.in
-
-distclean: clean
-	-rm -f libcsplit_definitions.h
-	-rm -f libcsplit.rc
-	-rm -f Makefile
 
 sources-local: $(BUILT_SOURCES)
 

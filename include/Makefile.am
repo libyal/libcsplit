@@ -14,13 +14,11 @@ EXTRA_DIST = \
 	libcsplit/features.h.in \
 	libcsplit/types.h.in
 
-MAINTAINERCLEANFILES = \
+DISTCLEANFILES = \
+	libcsplit.h \
+	libcsplit/definitions.h \
+	libcsplit/features.h \
+	libcsplit/types.h \
+	Makefile \
 	Makefile.in
-
-distclean: clean
-	-rm -f libcsplit.h
-	-rm -f libcsplit/definitions.h
-	-rm -f libcsplit/features.h
-	-rm -f libcsplit/types.h
-	-rm -f Makefile
 
