@@ -31,14 +31,17 @@
  */
 #if defined( LIBCSPLIT_DLL_EXPORT )
 #define LIBCSPLIT_EXTERN __declspec(dllexport)
+#define LIBCSPLIT_EXTERN_VARIABLE extern __declspec(dllexport)
 
 #elif defined( LIBCSPLIT_DLL_IMPORT )
-#define LIBCSPLIT_EXTERN extern __declspec(dllimport)
+#define LIBCSPLIT_EXTERN __declspec(dllimport)
+#define LIBCSPLIT_EXTERN_VARIABLE extern __declspec(dllimport)
 
 #else
 #define LIBCSPLIT_EXTERN extern
+#define LIBCSPLIT_EXTERN_VARIABLE extern
 
-#endif
+#endif /* defined( LIBCSPLIT_DLL_EXPORT ) */
 
 #endif /* !defined( _LIBCSPLIT_EXTERN_H ) */
 
