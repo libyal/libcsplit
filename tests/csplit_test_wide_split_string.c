@@ -1110,7 +1110,11 @@ int main(
 
 	return( EXIT_SUCCESS );
 
+#if defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE )
+
 on_error:
 	return( EXIT_FAILURE );
+
+#endif /* defined( LIBCSPLIT_HAVE_WIDE_CHARACTER_TYPE ) */
 }
 
