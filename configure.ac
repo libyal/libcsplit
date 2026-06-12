@@ -2,7 +2,7 @@ AC_PREREQ([2.71])
 
 AC_INIT(
   [libcsplit],
-  [20260611],
+  [20260612],
   [https://github.com/libyal/libcsplit/issues])
 
 AC_CONFIG_SRCDIR(
