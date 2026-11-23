@@ -59,7 +59,7 @@ int csplit_test_narrow_split_string_initialize(
 	result = libcsplit_narrow_split_string_initialize(
 	          &split_string,
 	          "Test",
-	          4,
+	          5,
 	          1,
 	          &error );
 
@@ -98,7 +98,7 @@ int csplit_test_narrow_split_string_initialize(
 	result = libcsplit_narrow_split_string_initialize(
 	          NULL,
 	          "Test",
-	          4,
+	          5,
 	          1,
 	          &error );
 
@@ -119,7 +119,7 @@ int csplit_test_narrow_split_string_initialize(
 	result = libcsplit_narrow_split_string_initialize(
 	          &split_string,
 	          "Test",
-	          4,
+	          5,
 	          1,
 	          &error );
 
@@ -140,7 +140,7 @@ int csplit_test_narrow_split_string_initialize(
 	result = libcsplit_narrow_split_string_initialize(
 	          &split_string,
 	          "Test",
-	          4,
+	          5,
 	          -1,
 	          &error );
 
@@ -168,7 +168,7 @@ int csplit_test_narrow_split_string_initialize(
 		result = libcsplit_narrow_split_string_initialize(
 		          &split_string,
 		          "Test",
-		          4,
+		          5,
 		          1,
 		          &error );
 
@@ -206,7 +206,7 @@ int csplit_test_narrow_split_string_initialize(
 		result = libcsplit_narrow_split_string_initialize(
 		          &split_string,
 		          "Test",
-		          4,
+		          5,
 		          1,
 		          &error );
 
@@ -244,7 +244,7 @@ int csplit_test_narrow_split_string_initialize(
 		result = libcsplit_narrow_split_string_initialize(
 		          &split_string,
 		          "Test",
-		          4,
+		          5,
 		          1,
 		          &error );
 
@@ -801,8 +801,8 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	 */
 	result = libcsplit_narrow_split_string_initialize(
 	          &split_string,
-	          "TestTest",
-	          4,
+	          "Test",
+	          5,
 	          1,
 	          &error );
 
@@ -841,7 +841,7 @@ int csplit_test_narrow_split_string_set_segment_by_index(
 	CSPLIT_TEST_ASSERT_EQUAL_SIZE(
 	 "string_size",
 	 string_size,
-	 (size_t) 4 );
+	 (size_t) 5 );
 
 	/* Test regular cases
 	 */
